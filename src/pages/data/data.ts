@@ -22,8 +22,8 @@ export class DataPage {
     lineChart: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public thingspeak: ThingspeakProvider, public particle: ParticleProvider) {
-    thingspeak.readKey = '8MUTD1PVX9J5V9PJ';
-    thingspeak.channel = '431376';
+    thingspeak.readKey = 'CK6UPSEZJ9J7PLXD';
+    thingspeak.channel = '529343';
   }
 
   ionViewDidLoad() {
@@ -32,7 +32,7 @@ export class DataPage {
 
   refresh() {
     this.thingspeak.getChannel().subscribe(
-    (data) => { 
+    (data) => {
             var dataObj = JSON.parse(data.text());
             this.graph(dataObj);
         },
@@ -43,7 +43,7 @@ export class DataPage {
   }
 
   graph(data: any) {
-  
+
             var dataLabels = [];
             var dataPoints = [];
             for (var i in data.feeds) {
