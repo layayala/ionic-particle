@@ -27,8 +27,12 @@ export class FunctionPage {
 
   callFunction() {
     this.particle.callFunction(this.functionName, this.functionParameter);
+    if (this.functionParameter === 'on' ) {
+      this.functionParameter = 'off';
+  } else {
+      this.functionParameter = 'on';
   }
-
+}
   login() {
     this.navCtrl.push( LoginPage );
   }
