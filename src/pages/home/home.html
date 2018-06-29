@@ -7,15 +7,17 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding> 
+<ion-content padding>
   <div *ngIf="!particle.token">
       Please login and select a device. <br />
       <button ion-button (click)="login()">Login</button>
   </div>
   <div *ngIf="particle.token && particle.device">
-      <h5> Wearables Device App </h5>
+      <h5> Med Alert <ion-icon name="heart"></ion-icon> </h5>
+      <h6> Healthy - Happy - Heartbeat </h6>
       <p>
-        This app demonstrates how to access a Particle.io device to display its state, read events, and call functions.
+        This app displays your pulse rate by reading it from the tip of your finger. Your pulse rate is the same as your heart rate.
+        It is important for people to have longterm data of their heart rate since the normal heart rate varies from person to person. 
       </p>
       <!-- You can display different device states by checking particle.device -->
       <p *ngIf="!particle.device || !particle.device.connected">{{particle.device.name}} is offline</p>

@@ -25,20 +25,22 @@
   <!--
     Next, let's display content if we are both logged in and a device is selected.
   -->
+
   <div *ngIf="particle.token && particle.device">
       <!-- Make sure we actually were able to poll the variable -->
       <div *ngIf="subscribed">
-        <h3>Device variables</h3>
+        <h3> Your Current <ion-icon name="heart"></ion-icon>Rate</h3>
+
         <!--
-            Finally, we can display the variable var1, which is defined in variable.ts
+            Finally, we can display the variable bpm, which is defined in variable.ts
         -->
-        <p>
-        The device variable "var1" is periodically polled, and the current value is {{var1}} 
-        </p>
+        <h1> {{bpm}} BPM</h1>
+        <h6> BPM - Beats Per Minute </h6>
+
       </div>
       <!-- "If we were unable to poll the variable, display an error message -->
       <div *ngIf="!subscribed">
-            The device is offline or "var1" is unavailable.
+            The device is offline or "bpm" is unavailable.
       </div>
   </div>
 
